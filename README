@@ -1,0 +1,20 @@
+
+# 驱动程序超时修补程序
+
+如果您收到以下错误之一：
+
+ + On Windows 10: CL_OUT_OF_RESOURCES
+ + On Windows 7/8: Display driver stopped responding and has successfully recovered
+ + Warning from Hashcat: Kernel exec timeout is not disabled
+ 
+ 若要禁用 [WDDM 恢复](http://msdn.microsoft.com/en-us/windows/hardware/gg487368)，请创建一个名为 wddm_timeout_patch.reg 的文件，其中包含以下内容：
+ ```
+ Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"TdrLevel"=dword:00000000
+ ```
+ # CUDA Toolkit下载
+ https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_network
+ 
+ 
